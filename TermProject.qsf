@@ -1,0 +1,147 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2020  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and any partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details, at
+# https://fpgasoftware.intel.com/eula.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+# Date created = 16:52:12  November 23, 2021
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		TermProject_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "MAX 10"
+set_global_assignment -name DEVICE 10M50DAF484C7G
+set_global_assignment -name TOP_LEVEL_ENTITY TermProject
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:52:12  NOVEMBER 23, 2021"
+set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE ../LabRam/RAMtesterCode/binary2seven/binary2seven.v
+set_global_assignment -name VERILOG_FILE ../LabRam/RAMtesterCode/BinUp/BinUp.v
+set_global_assignment -name VERILOG_FILE ../LabRam/RAMtesterCode/OnOffToggle/OnOffToggle.v
+set_global_assignment -name VERILOG_FILE ../triscRAM/triscRAM/triscRAM.v
+set_global_assignment -name VERILOG_FILE ../HW8/NbitMultiplexer/NbitMultiplexer.v
+set_global_assignment -name VERILOG_FILE ../Lab8/Lab2C/TwoComp.v
+set_global_assignment -name VERILOG_FILE ../Lab10/ALU/ALU.v
+set_global_assignment -name VERILOG_FILE ../HW8/NbitBinaryCounter/NbitBinaryCounter.v
+set_global_assignment -name VERILOG_FILE ../HW8/NbitParallelInOut/NbitParallelInOut.v
+set_global_assignment -name VERILOG_FILE ../Lab12/ControlUnit/ControlUnit.v
+set_global_assignment -name VERILOG_FILE ../Lab12/InstructionDecoder/InstructionDecoder.v
+set_global_assignment -name VERILOG_FILE ../Lab12/ProcessorControlUnit/ProcessorControlUnit.v
+set_global_assignment -name VERILOG_FILE TermProject.v
+set_global_assignment -name VERILOG_FILE ../HW7/FullAdder/FullAdder.v
+set_global_assignment -name VERILOG_FILE ../HW8/FourBitAccumulator/FourBitAccumulator.v
+set_global_assignment -name VERILOG_FILE ../Lab9/TwoComplementAddSub.v
+set_location_assignment PIN_AB5 -to ClockIn
+set_location_assignment PIN_A7 -to SysClock
+set_location_assignment PIN_B8 -to startStop
+set_location_assignment PIN_E15 -to b[0]
+set_location_assignment PIN_C15 -to c[0]
+set_location_assignment PIN_C16 -to d[0]
+set_location_assignment PIN_D17 -to f[0]
+set_location_assignment PIN_C17 -to g[0]
+set_location_assignment PIN_C14 -to a[0]
+set_location_assignment PIN_C18 -to a[1]
+set_location_assignment PIN_B20 -to a[2]
+set_location_assignment PIN_F21 -to a[3]
+set_location_assignment PIN_F18 -to a[4]
+set_location_assignment PIN_J20 -to a[5]
+set_location_assignment PIN_D18 -to b[1]
+set_location_assignment PIN_A20 -to b[2]
+set_location_assignment PIN_E22 -to b[3]
+set_location_assignment PIN_E20 -to b[4]
+set_location_assignment PIN_K20 -to b[5]
+set_location_assignment PIN_E18 -to c[1]
+set_location_assignment PIN_B19 -to c[2]
+set_location_assignment PIN_E21 -to c[3]
+set_location_assignment PIN_E19 -to c[4]
+set_location_assignment PIN_L18 -to c[5]
+set_location_assignment PIN_B16 -to d[1]
+set_location_assignment PIN_A21 -to d[2]
+set_location_assignment PIN_C19 -to d[3]
+set_location_assignment PIN_J18 -to d[4]
+set_location_assignment PIN_N18 -to d[5]
+set_location_assignment PIN_E16 -to e[0]
+set_location_assignment PIN_A17 -to e[1]
+set_location_assignment PIN_B21 -to e[2]
+set_location_assignment PIN_C20 -to e[3]
+set_location_assignment PIN_H19 -to e[4]
+set_location_assignment PIN_M20 -to e[5]
+set_location_assignment PIN_A18 -to f[1]
+set_location_assignment PIN_C22 -to f[2]
+set_location_assignment PIN_D19 -to f[3]
+set_location_assignment PIN_F19 -to f[4]
+set_location_assignment PIN_N19 -to f[5]
+set_location_assignment PIN_B17 -to g[1]
+set_location_assignment PIN_B22 -to g[2]
+set_location_assignment PIN_E17 -to g[3]
+set_location_assignment PIN_F20 -to g[4]
+set_location_assignment PIN_N20 -to g[5]
+set_location_assignment PIN_C11 -to DataIn[1]
+set_location_assignment PIN_D12 -to DataIn[2]
+set_location_assignment PIN_C12 -to DataIn[3]
+set_location_assignment PIN_A12 -to DataIn[4]
+set_location_assignment PIN_B12 -to DataIn[5]
+set_location_assignment PIN_A13 -to DataIn[6]
+set_location_assignment PIN_A14 -to DataIn[7]
+set_location_assignment PIN_C10 -to DataIn[0]
+set_location_assignment PIN_F15 -to Mode
+set_location_assignment PIN_A9 -to Datadisplay[1]
+set_location_assignment PIN_A10 -to Datadisplay[2]
+set_location_assignment PIN_B10 -to Datadisplay[3]
+set_location_assignment PIN_D13 -to Datadisplay[4]
+set_location_assignment PIN_C13 -to Datadisplay[5]
+set_location_assignment PIN_A8 -to Datadisplay[0]
+set_location_assignment PIN_AB20 -to RW
+set_location_assignment PIN_AA19 -to displayControlBus[10]
+set_location_assignment PIN_E14 -to displayControlBus[11]
+set_location_assignment PIN_D14 -to displayControlBus[12]
+set_location_assignment PIN_A11 -to displayControlBus[13]
+set_location_assignment PIN_B11 -to displayControlBus[14]
+set_location_assignment PIN_AB8 -to displayControlBus[1]
+set_location_assignment PIN_AB9 -to displayControlBus[2]
+set_location_assignment PIN_Y10 -to displayControlBus[3]
+set_location_assignment PIN_AA11 -to displayControlBus[4]
+set_location_assignment PIN_AA12 -to displayControlBus[5]
+set_location_assignment PIN_AB17 -to displayControlBus[7]
+set_location_assignment PIN_AA17 -to displayControlBus[8]
+set_location_assignment PIN_A19 -to displayControlBus[9]
+set_location_assignment PIN_AB7 -to displayControlBus[0]
+set_location_assignment PIN_AB6 -to ClearAddGen
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
