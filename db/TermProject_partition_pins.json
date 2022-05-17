@@ -1,0 +1,317 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "a[0]",
+					"strict" : false
+				},
+				{
+					"name" : "a[1]",
+					"strict" : false
+				},
+				{
+					"name" : "a[2]",
+					"strict" : false
+				},
+				{
+					"name" : "a[3]",
+					"strict" : false
+				},
+				{
+					"name" : "a[4]",
+					"strict" : false
+				},
+				{
+					"name" : "a[5]",
+					"strict" : false
+				},
+				{
+					"name" : "b[0]",
+					"strict" : false
+				},
+				{
+					"name" : "b[1]",
+					"strict" : false
+				},
+				{
+					"name" : "b[2]",
+					"strict" : false
+				},
+				{
+					"name" : "b[3]",
+					"strict" : false
+				},
+				{
+					"name" : "b[4]",
+					"strict" : false
+				},
+				{
+					"name" : "b[5]",
+					"strict" : false
+				},
+				{
+					"name" : "c[0]",
+					"strict" : false
+				},
+				{
+					"name" : "c[1]",
+					"strict" : false
+				},
+				{
+					"name" : "c[2]",
+					"strict" : false
+				},
+				{
+					"name" : "c[3]",
+					"strict" : false
+				},
+				{
+					"name" : "c[4]",
+					"strict" : false
+				},
+				{
+					"name" : "c[5]",
+					"strict" : false
+				},
+				{
+					"name" : "d[0]",
+					"strict" : false
+				},
+				{
+					"name" : "d[1]",
+					"strict" : false
+				},
+				{
+					"name" : "d[2]",
+					"strict" : false
+				},
+				{
+					"name" : "d[3]",
+					"strict" : false
+				},
+				{
+					"name" : "d[4]",
+					"strict" : false
+				},
+				{
+					"name" : "d[5]",
+					"strict" : false
+				},
+				{
+					"name" : "e[0]",
+					"strict" : false
+				},
+				{
+					"name" : "e[1]",
+					"strict" : false
+				},
+				{
+					"name" : "e[2]",
+					"strict" : false
+				},
+				{
+					"name" : "e[3]",
+					"strict" : false
+				},
+				{
+					"name" : "e[4]",
+					"strict" : false
+				},
+				{
+					"name" : "e[5]",
+					"strict" : false
+				},
+				{
+					"name" : "f[0]",
+					"strict" : false
+				},
+				{
+					"name" : "f[1]",
+					"strict" : false
+				},
+				{
+					"name" : "f[2]",
+					"strict" : false
+				},
+				{
+					"name" : "f[3]",
+					"strict" : false
+				},
+				{
+					"name" : "f[4]",
+					"strict" : false
+				},
+				{
+					"name" : "f[5]",
+					"strict" : false
+				},
+				{
+					"name" : "g[0]",
+					"strict" : false
+				},
+				{
+					"name" : "g[1]",
+					"strict" : false
+				},
+				{
+					"name" : "g[2]",
+					"strict" : false
+				},
+				{
+					"name" : "g[3]",
+					"strict" : false
+				},
+				{
+					"name" : "g[4]",
+					"strict" : false
+				},
+				{
+					"name" : "g[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Datadisplay[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Datadisplay[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Datadisplay[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Datadisplay[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Datadisplay[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Datadisplay[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Datadisplay[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Datadisplay[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Datadisplay[8]",
+					"strict" : false
+				},
+				{
+					"name" : "displayControlBus[0]",
+					"strict" : false
+				},
+				{
+					"name" : "displayControlBus[1]",
+					"strict" : false
+				},
+				{
+					"name" : "displayControlBus[2]",
+					"strict" : false
+				},
+				{
+					"name" : "displayControlBus[3]",
+					"strict" : false
+				},
+				{
+					"name" : "displayControlBus[4]",
+					"strict" : false
+				},
+				{
+					"name" : "displayControlBus[5]",
+					"strict" : false
+				},
+				{
+					"name" : "displayControlBus[7]",
+					"strict" : false
+				},
+				{
+					"name" : "displayControlBus[8]",
+					"strict" : false
+				},
+				{
+					"name" : "displayControlBus[9]",
+					"strict" : false
+				},
+				{
+					"name" : "displayControlBus[10]",
+					"strict" : false
+				},
+				{
+					"name" : "displayControlBus[11]",
+					"strict" : false
+				},
+				{
+					"name" : "displayControlBus[14]",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Mode",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DataIn[7]",
+					"strict" : false
+				},
+				{
+					"name" : "RW",
+					"strict" : false
+				},
+				{
+					"name" : "SysClock",
+					"strict" : false
+				},
+				{
+					"name" : "startStop",
+					"strict" : false
+				},
+				{
+					"name" : "ClearAddGen",
+					"strict" : false
+				},
+				{
+					"name" : "ClockIn",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
