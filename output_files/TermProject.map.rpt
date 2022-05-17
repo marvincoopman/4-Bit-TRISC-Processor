@@ -1,0 +1,868 @@
+Analysis & Synthesis report for TermProject
+Fri Dec 03 22:14:18 2021
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |TermProject|ProcessorControlUnit:ControlUnit|ControlUnit:CU|state
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for triscRAM:RAM|altsyncram:altsyncram_component|altsyncram_6fl1:auto_generated
+ 15. Parameter Settings for User Entity Instance: NbitBinaryCounter:ProgramCounter
+ 16. Parameter Settings for User Entity Instance: NbitParallelInOut:InstructionRegister
+ 17. Parameter Settings for User Entity Instance: NbitParallelInOut:BufferRegister
+ 18. Parameter Settings for User Entity Instance: FourBitAccumulator:Accumulator|NbitMultiplexer:multiplexer
+ 19. Parameter Settings for User Entity Instance: FourBitAccumulator:Accumulator|NbitBinaryCounter:counter
+ 20. Parameter Settings for User Entity Instance: ALU:ALU
+ 21. Parameter Settings for User Entity Instance: ProcessorControlUnit:ControlUnit|ControlUnit:CU
+ 22. Parameter Settings for User Entity Instance: OnOffToggle:DivideX2
+ 23. Parameter Settings for User Entity Instance: BinUp:AddressGen
+ 24. Parameter Settings for User Entity Instance: triscRAM:RAM|altsyncram:altsyncram_component
+ 25. altsyncram Parameter Settings by Entity Instance
+ 26. Port Connectivity Checks: "BinUp:AddressGen"
+ 27. Port Connectivity Checks: "OnOffToggle:DivideX2"
+ 28. Port Connectivity Checks: "ProcessorControlUnit:ControlUnit|InstructionDecoder:ID"
+ 29. Port Connectivity Checks: "ProcessorControlUnit:ControlUnit"
+ 30. Port Connectivity Checks: "ALU:ALU"
+ 31. Port Connectivity Checks: "NbitParallelInOut:InstructionRegister"
+ 32. Post-Synthesis Netlist Statistics for Top Partition
+ 33. Elapsed Time Per Partition
+ 34. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Dec 03 22:14:18 2021       ;
+; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                      ; TermProject                                 ;
+; Top-level Entity Name              ; TermProject                                 ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 179                                         ;
+;     Total combinational functions  ; 178                                         ;
+;     Dedicated logic registers      ; 42                                          ;
+; Total registers                    ; 42                                          ;
+; Total pins                         ; 80                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 128                                         ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                            ; TermProject        ; TermProject        ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                         ;
++------------------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                     ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                 ; Library ;
++------------------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
+; ../LabRam/RAMtesterCode/binary2seven/binary2seven.v  ; yes             ; User Verilog HDL File        ; D:/MyCSE2441Labs/LabRam/RAMtesterCode/binary2seven/binary2seven.v            ;         ;
+; ../LabRam/RAMtesterCode/BinUp/BinUp.v                ; yes             ; User Verilog HDL File        ; D:/MyCSE2441Labs/LabRam/RAMtesterCode/BinUp/BinUp.v                          ;         ;
+; ../LabRam/RAMtesterCode/OnOffToggle/OnOffToggle.v    ; yes             ; User Verilog HDL File        ; D:/MyCSE2441Labs/LabRam/RAMtesterCode/OnOffToggle/OnOffToggle.v              ;         ;
+; ../triscRAM/triscRAM/triscRAM.v                      ; yes             ; User Wizard-Generated File   ; D:/MyCSE2441Labs/triscRAM/triscRAM/triscRAM.v                                ;         ;
+; ../HW8/NbitMultiplexer/NbitMultiplexer.v             ; yes             ; User Verilog HDL File        ; D:/MyCSE2441Labs/HW8/NbitMultiplexer/NbitMultiplexer.v                       ;         ;
+; ../Lab8/Lab2C/TwoComp.v                              ; yes             ; User Verilog HDL File        ; D:/MyCSE2441Labs/Lab8/Lab2C/TwoComp.v                                        ;         ;
+; ../Lab10/ALU/ALU.v                                   ; yes             ; User Verilog HDL File        ; D:/MyCSE2441Labs/Lab10/ALU/ALU.v                                             ;         ;
+; ../HW8/NbitBinaryCounter/NbitBinaryCounter.v         ; yes             ; User Verilog HDL File        ; D:/MyCSE2441Labs/HW8/NbitBinaryCounter/NbitBinaryCounter.v                   ;         ;
+; ../HW8/NbitParallelInOut/NbitParallelInOut.v         ; yes             ; User Verilog HDL File        ; D:/MyCSE2441Labs/HW8/NbitParallelInOut/NbitParallelInOut.v                   ;         ;
+; ../Lab12/ControlUnit/ControlUnit.v                   ; yes             ; User Verilog HDL File        ; D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v                             ;         ;
+; ../Lab12/InstructionDecoder/InstructionDecoder.v     ; yes             ; User Verilog HDL File        ; D:/MyCSE2441Labs/Lab12/InstructionDecoder/InstructionDecoder.v               ;         ;
+; ../Lab12/ProcessorControlUnit/ProcessorControlUnit.v ; yes             ; User Verilog HDL File        ; D:/MyCSE2441Labs/Lab12/ProcessorControlUnit/ProcessorControlUnit.v           ;         ;
+; TermProject.v                                        ; yes             ; User Verilog HDL File        ; D:/MyCSE2441Labs/TermProject/TermProject.v                                   ;         ;
+; ../HW7/FullAdder/FullAdder.v                         ; yes             ; User Verilog HDL File        ; D:/MyCSE2441Labs/HW7/FullAdder/FullAdder.v                                   ;         ;
+; ../HW8/FourBitAccumulator/FourBitAccumulator.v       ; yes             ; User Verilog HDL File        ; D:/MyCSE2441Labs/HW8/FourBitAccumulator/FourBitAccumulator.v                 ;         ;
+; ../Lab9/TwoComplementAddSub.v                        ; yes             ; User Verilog HDL File        ; D:/MyCSE2441Labs/Lab9/TwoComplementAddSub.v                                  ;         ;
+; altsyncram.tdf                                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc                                ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                                          ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal201.inc                                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc        ;         ;
+; a_rdenreg.inc                                        ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                                           ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                                           ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                                         ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_6fl1.tdf                               ; yes             ; Auto-Generated Megafunction  ; D:/MyCSE2441Labs/TermProject/db/altsyncram_6fl1.tdf                          ;         ;
++------------------------------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Estimated Total logic elements              ; 179             ;
+;                                             ;                 ;
+; Total combinational functions               ; 178             ;
+; Logic element usage by number of LUT inputs ;                 ;
+;     -- 4 input functions                    ; 97              ;
+;     -- 3 input functions                    ; 51              ;
+;     -- <=2 input functions                  ; 30              ;
+;                                             ;                 ;
+; Logic elements by mode                      ;                 ;
+;     -- normal mode                          ; 178             ;
+;     -- arithmetic mode                      ; 0               ;
+;                                             ;                 ;
+; Total registers                             ; 42              ;
+;     -- Dedicated logic registers            ; 42              ;
+;     -- I/O registers                        ; 0               ;
+;                                             ;                 ;
+; I/O pins                                    ; 80              ;
+; Total memory bits                           ; 128             ;
+;                                             ;                 ;
+; Embedded Multiplier 9-bit elements          ; 0               ;
+;                                             ;                 ;
+; Maximum fan-out node                        ; startStop~input ;
+; Maximum fan-out                             ; 29              ;
+; Total fan-out                               ; 921             ;
+; Average fan-out                             ; 2.37            ;
++---------------------------------------------+-----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                             ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                      ; Entity Name          ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------+----------------------+--------------+
+; |TermProject                              ; 178 (19)            ; 42 (0)                    ; 128         ; 0          ; 0            ; 0       ; 0         ; 80   ; 0            ; 0          ; |TermProject                                                                             ; TermProject          ; work         ;
+;    |ALU:ALU|                              ; 6 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TermProject|ALU:ALU                                                                     ; ALU                  ; work         ;
+;       |TwoComplementAddSub:adder|         ; 6 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TermProject|ALU:ALU|TwoComplementAddSub:adder                                           ; TwoComplementAddSub  ; work         ;
+;          |FullAdder:test1|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TermProject|ALU:ALU|TwoComplementAddSub:adder|FullAdder:test1                           ; FullAdder            ; work         ;
+;          |FullAdder:test2|                ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TermProject|ALU:ALU|TwoComplementAddSub:adder|FullAdder:test2                           ; FullAdder            ; work         ;
+;          |FullAdder:test3|                ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TermProject|ALU:ALU|TwoComplementAddSub:adder|FullAdder:test3                           ; FullAdder            ; work         ;
+;          |FullAdder:test4|                ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TermProject|ALU:ALU|TwoComplementAddSub:adder|FullAdder:test4                           ; FullAdder            ; work         ;
+;    |BinUp:AddressGen|                     ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TermProject|BinUp:AddressGen                                                            ; BinUp                ; work         ;
+;    |FourBitAccumulator:Accumulator|       ; 23 (0)              ; 4 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TermProject|FourBitAccumulator:Accumulator                                              ; FourBitAccumulator   ; work         ;
+;       |NbitBinaryCounter:counter|         ; 19 (19)             ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TermProject|FourBitAccumulator:Accumulator|NbitBinaryCounter:counter                    ; NbitBinaryCounter    ; work         ;
+;       |NbitMultiplexer:multiplexer|       ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TermProject|FourBitAccumulator:Accumulator|NbitMultiplexer:multiplexer                  ; NbitMultiplexer      ; work         ;
+;    |NbitBinaryCounter:ProgramCounter|     ; 18 (18)             ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TermProject|NbitBinaryCounter:ProgramCounter                                            ; NbitBinaryCounter    ; work         ;
+;    |NbitParallelInOut:BufferRegister|     ; 0 (0)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TermProject|NbitParallelInOut:BufferRegister                                            ; NbitParallelInOut    ; work         ;
+;    |OnOffToggle:DivideX2|                 ; 2 (2)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TermProject|OnOffToggle:DivideX2                                                        ; OnOffToggle          ; work         ;
+;    |ProcessorControlUnit:ControlUnit|     ; 56 (0)              ; 25 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TermProject|ProcessorControlUnit:ControlUnit                                            ; ProcessorControlUnit ; work         ;
+;       |ControlUnit:CU|                    ; 56 (56)             ; 25 (25)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TermProject|ProcessorControlUnit:ControlUnit|ControlUnit:CU                             ; ControlUnit          ; work         ;
+;    |binary2seven:displayMAR|              ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TermProject|binary2seven:displayMAR                                                     ; binary2seven         ; work         ;
+;    |binary2seven:displayMDILSB|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TermProject|binary2seven:displayMDILSB                                                  ; binary2seven         ; work         ;
+;    |binary2seven:displayMDIMSB|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TermProject|binary2seven:displayMDIMSB                                                  ; binary2seven         ; work         ;
+;    |binary2seven:displayMDOLSB|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TermProject|binary2seven:displayMDOLSB                                                  ; binary2seven         ; work         ;
+;    |binary2seven:displayMDOMSB|           ; 15 (15)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TermProject|binary2seven:displayMDOMSB                                                  ; binary2seven         ; work         ;
+;    |binary2seven:displayPC|               ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TermProject|binary2seven:displayPC                                                      ; binary2seven         ; work         ;
+;    |triscRAM:RAM|                         ; 0 (0)               ; 0 (0)                     ; 128         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TermProject|triscRAM:RAM                                                                ; triscRAM             ; work         ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 128         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TermProject|triscRAM:RAM|altsyncram:altsyncram_component                                ; altsyncram           ; work         ;
+;          |altsyncram_6fl1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 128         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |TermProject|triscRAM:RAM|altsyncram:altsyncram_component|altsyncram_6fl1:auto_generated ; altsyncram_6fl1      ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                      ;
++----------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                   ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++----------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
+; triscRAM:RAM|altsyncram:altsyncram_component|altsyncram_6fl1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 16           ; 8            ; --           ; --           ; 128  ; None ;
++----------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |TermProject|ProcessorControlUnit:ControlUnit|ControlUnit:CU|state                                                                                                                                                                                                                                                                       ;
++------------------+------------------+------------+------------+------------+------------------+------------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+---------+---------+---------+---------+---------+
+; Name             ; state.ANDSUBXOR2 ; state.SUB0 ; state.XOR0 ; state.HLT0 ; state.ANDSUBXOR1 ; state.ANDSUBXOR0 ; state.ADD3 ; state.ADD2 ; state.ADD1 ; state.ADD0 ; state.STA2 ; state.STA1 ; state.STA0 ; state.LDA3 ; state.LDA2 ; state.LDA1 ; state.LDA0 ; state.JMP0 ; state.CLR0 ; state.INC0 ; state.E ; state.D ; state.C ; state.B ; state.A ;
++------------------+------------------+------------+------------+------------+------------------+------------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+---------+---------+---------+---------+---------+
+; state.A          ; 0                ; 0          ; 0          ; 0          ; 0                ; 0                ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0       ; 0       ; 0       ; 0       ; 0       ;
+; state.B          ; 0                ; 0          ; 0          ; 0          ; 0                ; 0                ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0       ; 0       ; 0       ; 1       ; 1       ;
+; state.C          ; 0                ; 0          ; 0          ; 0          ; 0                ; 0                ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0       ; 0       ; 1       ; 0       ; 1       ;
+; state.D          ; 0                ; 0          ; 0          ; 0          ; 0                ; 0                ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0       ; 1       ; 0       ; 0       ; 1       ;
+; state.E          ; 0                ; 0          ; 0          ; 0          ; 0                ; 0                ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1       ; 0       ; 0       ; 0       ; 1       ;
+; state.INC0       ; 0                ; 0          ; 0          ; 0          ; 0                ; 0                ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.CLR0       ; 0                ; 0          ; 0          ; 0          ; 0                ; 0                ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.JMP0       ; 0                ; 0          ; 0          ; 0          ; 0                ; 0                ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.LDA0       ; 0                ; 0          ; 0          ; 0          ; 0                ; 0                ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.LDA1       ; 0                ; 0          ; 0          ; 0          ; 0                ; 0                ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.LDA2       ; 0                ; 0          ; 0          ; 0          ; 0                ; 0                ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.LDA3       ; 0                ; 0          ; 0          ; 0          ; 0                ; 0                ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.STA0       ; 0                ; 0          ; 0          ; 0          ; 0                ; 0                ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.STA1       ; 0                ; 0          ; 0          ; 0          ; 0                ; 0                ; 0          ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.STA2       ; 0                ; 0          ; 0          ; 0          ; 0                ; 0                ; 0          ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.ADD0       ; 0                ; 0          ; 0          ; 0          ; 0                ; 0                ; 0          ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.ADD1       ; 0                ; 0          ; 0          ; 0          ; 0                ; 0                ; 0          ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.ADD2       ; 0                ; 0          ; 0          ; 0          ; 0                ; 0                ; 0          ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.ADD3       ; 0                ; 0          ; 0          ; 0          ; 0                ; 0                ; 1          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.ANDSUBXOR0 ; 0                ; 0          ; 0          ; 0          ; 0                ; 1                ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.ANDSUBXOR1 ; 0                ; 0          ; 0          ; 0          ; 1                ; 0                ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.HLT0       ; 0                ; 0          ; 0          ; 1          ; 0                ; 0                ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.XOR0       ; 0                ; 0          ; 1          ; 0          ; 0                ; 0                ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.SUB0       ; 0                ; 1          ; 0          ; 0          ; 0                ; 0                ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; state.ANDSUBXOR2 ; 1                ; 0          ; 0          ; 0          ; 0                ; 0                ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0          ; 0       ; 0       ; 0       ; 0       ; 1       ;
++------------------+------------------+------------+------------+------------+------------------+------------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+---------+---------+---------+---------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                                            ;
++--------------------------------------------------------------------------+------------------------------------------------------------+------------------------+
+; Latch Name                                                               ; Latch Enable Signal                                        ; Free of Timing Hazards ;
++--------------------------------------------------------------------------+------------------------------------------------------------+------------------------+
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|nextstate.B_1256         ; ProcessorControlUnit:ControlUnit|ControlUnit:CU|Selector29 ; yes                    ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|nextstate.C_1231         ; ProcessorControlUnit:ControlUnit|ControlUnit:CU|Selector29 ; yes                    ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|nextstate.D_1206         ; ProcessorControlUnit:ControlUnit|ControlUnit:CU|Selector29 ; yes                    ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|nextstate.E_1181         ; ProcessorControlUnit:ControlUnit|ControlUnit:CU|Selector29 ; yes                    ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|nextstate.HLT0_774       ; GND                                                        ; yes                    ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|nextstate.JMP0_1112      ; GND                                                        ; yes                    ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|nextstate.LDA1_1068      ; ProcessorControlUnit:ControlUnit|ControlUnit:CU|Selector29 ; yes                    ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|nextstate.LDA2_1043      ; ProcessorControlUnit:ControlUnit|ControlUnit:CU|Selector29 ; yes                    ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|nextstate.STA1_971       ; ProcessorControlUnit:ControlUnit|ControlUnit:CU|Selector29 ; yes                    ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|nextstate.STA2_946       ; ProcessorControlUnit:ControlUnit|ControlUnit:CU|Selector29 ; yes                    ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|nextstate.ADD1_899       ; ProcessorControlUnit:ControlUnit|ControlUnit:CU|Selector29 ; yes                    ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|nextstate.ADD2_874       ; ProcessorControlUnit:ControlUnit|ControlUnit:CU|Selector29 ; yes                    ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|nextstate.CLR0_1134      ; GND                                                        ; yes                    ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|nextstate.INC0_1156      ; GND                                                        ; yes                    ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|nextstate.ANDSUBXOR0_824 ; ProcessorControlUnit:ControlUnit|ControlUnit:CU|Selector29 ; yes                    ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|nextstate.ANDSUBXOR2_708 ; ProcessorControlUnit:ControlUnit|ControlUnit:CU|Selector29 ; yes                    ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|nextstate.LDA3_1018      ; ProcessorControlUnit:ControlUnit|ControlUnit:CU|Selector29 ; yes                    ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|nextstate.ANDSUBXOR1_799 ; ProcessorControlUnit:ControlUnit|ControlUnit:CU|Selector29 ; yes                    ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|nextstate.XOR0_752       ; GND                                                        ; yes                    ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|nextstate.SUB0_730       ; GND                                                        ; yes                    ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|nextstate.LDA0_1090      ; GND                                                        ; yes                    ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|nextstate.STA0_993       ; GND                                                        ; yes                    ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|nextstate.ADD0_921       ; GND                                                        ; yes                    ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|nextstate.ADD3_849       ; ProcessorControlUnit:ControlUnit|ControlUnit:CU|Selector29 ; yes                    ;
+; Number of user-specified and inferred latches = 24                       ;                                                            ;                        ;
++--------------------------------------------------------------------------+------------------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                           ;
++---------------------------------------------------------+--------------------+
+; Register name                                           ; Reason for Removal ;
++---------------------------------------------------------+--------------------+
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|state~4 ; Lost fanout        ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|state~5 ; Lost fanout        ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|state~6 ; Lost fanout        ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|state~7 ; Lost fanout        ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|state~8 ; Lost fanout        ;
+; ProcessorControlUnit:ControlUnit|ControlUnit:CU|state~9 ; Lost fanout        ;
+; Total Number of Removed Registers = 6                   ;                    ;
++---------------------------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 42    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 41    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |TermProject|AddIn[3]      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Source assignments for triscRAM:RAM|altsyncram:altsyncram_component|altsyncram_6fl1:auto_generated ;
++---------------------------------+--------------------+------+--------------------------------------+
+; Assignment                      ; Value              ; From ; To                                   ;
++---------------------------------+--------------------+------+--------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                    ;
++---------------------------------+--------------------+------+--------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: NbitBinaryCounter:ProgramCounter ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; N              ; 4     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: NbitParallelInOut:InstructionRegister ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; N              ; 4     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: NbitParallelInOut:BufferRegister ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; N              ; 4     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: FourBitAccumulator:Accumulator|NbitMultiplexer:multiplexer ;
++----------------+-------+--------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                           ;
++----------------+-------+--------------------------------------------------------------------------------+
+; N              ; 4     ; Signed Integer                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: FourBitAccumulator:Accumulator|NbitBinaryCounter:counter ;
++----------------+-------+------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                         ;
++----------------+-------+------------------------------------------------------------------------------+
+; N              ; 4     ; Signed Integer                                                               ;
++----------------+-------+------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ALU:ALU ;
++----------------+-------+-----------------------------+
+; Parameter Name ; Value ; Type                        ;
++----------------+-------+-----------------------------+
+; add            ; 00    ; Unsigned Binary             ;
+; sub            ; 01    ; Unsigned Binary             ;
+; andd           ; 10    ; Unsigned Binary             ;
+; xorr           ; 11    ; Unsigned Binary             ;
++----------------+-------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ProcessorControlUnit:ControlUnit|ControlUnit:CU ;
++----------------+--------+--------------------------------------------------------------------+
+; Parameter Name ; Value  ; Type                                                               ;
++----------------+--------+--------------------------------------------------------------------+
+; A              ; 000000 ; Unsigned Binary                                                    ;
+; B              ; 000001 ; Unsigned Binary                                                    ;
+; C              ; 000010 ; Unsigned Binary                                                    ;
+; D              ; 000011 ; Unsigned Binary                                                    ;
+; E              ; 000100 ; Unsigned Binary                                                    ;
+; INC0           ; 000101 ; Unsigned Binary                                                    ;
+; CLR0           ; 000110 ; Unsigned Binary                                                    ;
+; JMP0           ; 000111 ; Unsigned Binary                                                    ;
+; LDA0           ; 001000 ; Unsigned Binary                                                    ;
+; LDA1           ; 001001 ; Unsigned Binary                                                    ;
+; LDA2           ; 001010 ; Unsigned Binary                                                    ;
+; LDA3           ; 001011 ; Unsigned Binary                                                    ;
+; STA0           ; 001100 ; Unsigned Binary                                                    ;
+; STA1           ; 001101 ; Unsigned Binary                                                    ;
+; STA2           ; 001110 ; Unsigned Binary                                                    ;
+; ADD0           ; 001111 ; Unsigned Binary                                                    ;
+; ADD1           ; 010000 ; Unsigned Binary                                                    ;
+; ADD2           ; 010001 ; Unsigned Binary                                                    ;
+; ADD3           ; 010010 ; Unsigned Binary                                                    ;
+; ANDSUBXOR0     ; 010011 ; Unsigned Binary                                                    ;
+; ANDSUBXOR1     ; 010100 ; Unsigned Binary                                                    ;
+; HLT0           ; 010101 ; Unsigned Binary                                                    ;
+; XOR0           ; 010110 ; Unsigned Binary                                                    ;
+; XOR1           ; 010111 ; Unsigned Binary                                                    ;
+; XOR2           ; 011000 ; Unsigned Binary                                                    ;
+; XOR3           ; 011001 ; Unsigned Binary                                                    ;
+; SUB0           ; 011010 ; Unsigned Binary                                                    ;
+; SUB1           ; 011011 ; Unsigned Binary                                                    ;
+; SUB2           ; 011100 ; Unsigned Binary                                                    ;
+; SUB3           ; 011101 ; Unsigned Binary                                                    ;
+; JPN0           ; 011110 ; Unsigned Binary                                                    ;
+; ANDSUBXOR2     ; 011111 ; Unsigned Binary                                                    ;
++----------------+--------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: OnOffToggle:DivideX2 ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; ON             ; 1     ; Unsigned Binary                          ;
+; OFF            ; 0     ; Unsigned Binary                          ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BinUp:AddressGen ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; N              ; 4     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: triscRAM:RAM|altsyncram:altsyncram_component                                 ;
++------------------------------------+---------------------------------------------------------------------+----------------+
+; Parameter Name                     ; Value                                                               ; Type           ;
++------------------------------------+---------------------------------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                                                   ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                                                  ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                                                 ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                                                  ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                                                 ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                                                   ; Untyped        ;
+; OPERATION_MODE                     ; SINGLE_PORT                                                         ; Untyped        ;
+; WIDTH_A                            ; 8                                                                   ; Signed Integer ;
+; WIDTHAD_A                          ; 4                                                                   ; Signed Integer ;
+; NUMWORDS_A                         ; 16                                                                  ; Signed Integer ;
+; OUTDATA_REG_A                      ; CLOCK0                                                              ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                                                ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                                                ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                                                ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                                                ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                                                ; Untyped        ;
+; WIDTH_B                            ; 1                                                                   ; Untyped        ;
+; WIDTHAD_B                          ; 1                                                                   ; Untyped        ;
+; NUMWORDS_B                         ; 1                                                                   ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                                              ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                                              ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                                              ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1                                                              ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                                        ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                                              ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                                                ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                                                ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                                                ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                                                ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                                                ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                                                ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                                                   ; Signed Integer ;
+; WIDTH_BYTEENA_B                    ; 1                                                                   ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                                                ; Untyped        ;
+; BYTE_SIZE                          ; 8                                                                   ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                           ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                                                ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                                                ; Untyped        ;
+; INIT_FILE                          ; ../../My Documents/CSE 2441/Fall 2021/designs/triscRAM/triscRAM.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                                              ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                                                   ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS                                                              ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                                              ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                                                              ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                                              ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                                     ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                                     ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                                               ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                                               ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                                                   ; Untyped        ;
+; DEVICE_FAMILY                      ; MAX 10                                                              ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_6fl1                                                     ; Untyped        ;
++------------------------------------+---------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                         ;
++-------------------------------------------+----------------------------------------------+
+; Name                                      ; Value                                        ;
++-------------------------------------------+----------------------------------------------+
+; Number of entity instances                ; 1                                            ;
+; Entity Instance                           ; triscRAM:RAM|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                  ;
+;     -- WIDTH_A                            ; 8                                            ;
+;     -- NUMWORDS_A                         ; 16                                           ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                       ;
+;     -- WIDTH_B                            ; 1                                            ;
+;     -- NUMWORDS_B                         ; 1                                            ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                       ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                 ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                         ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                    ;
++-------------------------------------------+----------------------------------------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "BinUp:AddressGen" ;
++------+-------+----------+--------------------+
+; Port ; Type  ; Severity ; Details            ;
++------+-------+----------+--------------------+
+; load ; Input ; Info     ; Stuck at VCC       ;
+; D    ; Input ; Info     ; Stuck at GND       ;
++------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "OnOffToggle:DivideX2" ;
++------+-------+----------+------------------------+
+; Port ; Type  ; Severity ; Details                ;
++------+-------+----------+------------------------+
+; IN   ; Input ; Info     ; Stuck at VCC           ;
++------+-------+----------+------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ProcessorControlUnit:ControlUnit|InstructionDecoder:ID"                                  ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; y[11..15] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ProcessorControlUnit:ControlUnit"                                                                        ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; y    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:ALU"                                                                                                     ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                  ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Cout     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; OVR      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; Aout     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; Bout     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; stateout ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; display0 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; display1 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "NbitParallelInOut:InstructionRegister"                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 80                          ;
+; cycloneiii_ff         ; 42                          ;
+;     CLR               ; 41                          ;
+;     plain             ; 1                           ;
+; cycloneiii_lcell_comb ; 187                         ;
+;     normal            ; 187                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 11                          ;
+;         2 data inputs ; 27                          ;
+;         3 data inputs ; 51                          ;
+;         4 data inputs ; 97                          ;
+; cycloneiii_ram_block  ; 8                           ;
+;                       ;                             ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 3.22                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Fri Dec 03 22:14:08 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TermProject -c TermProject
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /mycse2441labs/labram/ramtestercode/binary2seven/binary2seven.v
+    Info (12023): Found entity 1: binary2seven File: D:/MyCSE2441Labs/LabRam/RAMtesterCode/binary2seven/binary2seven.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /mycse2441labs/labram/ramtestercode/binup/binup.v
+    Info (12023): Found entity 1: BinUp File: D:/MyCSE2441Labs/LabRam/RAMtesterCode/BinUp/BinUp.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /mycse2441labs/labram/ramtestercode/onofftoggle/onofftoggle.v
+    Info (12023): Found entity 1: OnOffToggle File: D:/MyCSE2441Labs/LabRam/RAMtesterCode/OnOffToggle/OnOffToggle.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /mycse2441labs/triscram/triscram/triscram.v
+    Info (12023): Found entity 1: triscRAM File: D:/MyCSE2441Labs/triscRAM/triscRAM/triscRAM.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file /mycse2441labs/hw8/nbitmultiplexer/nbitmultiplexer.v
+    Info (12023): Found entity 1: NbitMultiplexer File: D:/MyCSE2441Labs/HW8/NbitMultiplexer/NbitMultiplexer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /mycse2441labs/lab8/lab2c/twocomp.v
+    Info (12023): Found entity 1: TwoComp File: D:/MyCSE2441Labs/Lab8/Lab2C/TwoComp.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /mycse2441labs/lab10/alu/alu.v
+    Info (12023): Found entity 1: ALU File: D:/MyCSE2441Labs/Lab10/ALU/ALU.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /mycse2441labs/hw8/nbitbinarycounter/nbitbinarycounter.v
+    Info (12023): Found entity 1: NbitBinaryCounter File: D:/MyCSE2441Labs/HW8/NbitBinaryCounter/NbitBinaryCounter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /mycse2441labs/hw8/nbitparallelinout/nbitparallelinout.v
+    Info (12023): Found entity 1: NbitParallelInOut File: D:/MyCSE2441Labs/HW8/NbitParallelInOut/NbitParallelInOut.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /mycse2441labs/lab12/controlunit/controlunit.v
+    Info (12023): Found entity 1: ControlUnit File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /mycse2441labs/lab12/instructiondecoder/instructiondecoder.v
+    Info (12023): Found entity 1: InstructionDecoder File: D:/MyCSE2441Labs/Lab12/InstructionDecoder/InstructionDecoder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /mycse2441labs/lab12/processorcontrolunit/processorcontrolunit.v
+    Info (12023): Found entity 1: ProcessorControlUnit File: D:/MyCSE2441Labs/Lab12/ProcessorControlUnit/ProcessorControlUnit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file termproject.v
+    Info (12023): Found entity 1: TermProject File: D:/MyCSE2441Labs/TermProject/TermProject.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /mycse2441labs/hw7/fulladder/fulladder.v
+    Info (12023): Found entity 1: FullAdder File: D:/MyCSE2441Labs/HW7/FullAdder/FullAdder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /mycse2441labs/hw8/fourbitaccumulator/fourbitaccumulator.v
+    Info (12023): Found entity 1: FourBitAccumulator File: D:/MyCSE2441Labs/HW8/FourBitAccumulator/FourBitAccumulator.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /mycse2441labs/lab9/twocomplementaddsub.v
+    Info (12023): Found entity 1: TwoComplementAddSub File: D:/MyCSE2441Labs/Lab9/TwoComplementAddSub.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at TermProject.v(22): created implicit net for "ALUin" File: D:/MyCSE2441Labs/TermProject/TermProject.v Line: 22
+Info (12127): Elaborating entity "TermProject" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at TermProject.v(22): object "ALUin" assigned a value but never read File: D:/MyCSE2441Labs/TermProject/TermProject.v Line: 22
+Warning (10230): Verilog HDL assignment warning at TermProject.v(22): truncated value with size 4 to match size of target (1) File: D:/MyCSE2441Labs/TermProject/TermProject.v Line: 22
+Warning (10030): Net "MDI[7..4]" at TermProject.v(10) has no driver or initial value, using a default initial value '0' File: D:/MyCSE2441Labs/TermProject/TermProject.v Line: 10
+Warning (10030): Net "ControlBus[6]" at TermProject.v(13) has no driver or initial value, using a default initial value '0' File: D:/MyCSE2441Labs/TermProject/TermProject.v Line: 13
+Info (12128): Elaborating entity "NbitBinaryCounter" for hierarchy "NbitBinaryCounter:ProgramCounter" File: D:/MyCSE2441Labs/TermProject/TermProject.v Line: 37
+Info (12128): Elaborating entity "NbitParallelInOut" for hierarchy "NbitParallelInOut:InstructionRegister" File: D:/MyCSE2441Labs/TermProject/TermProject.v Line: 42
+Info (12128): Elaborating entity "FourBitAccumulator" for hierarchy "FourBitAccumulator:Accumulator" File: D:/MyCSE2441Labs/TermProject/TermProject.v Line: 51
+Info (12128): Elaborating entity "NbitMultiplexer" for hierarchy "FourBitAccumulator:Accumulator|NbitMultiplexer:multiplexer" File: D:/MyCSE2441Labs/HW8/FourBitAccumulator/FourBitAccumulator.v Line: 10
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:ALU" File: D:/MyCSE2441Labs/TermProject/TermProject.v Line: 54
+Warning (10235): Verilog HDL Always Construct warning at ALU.v(29): variable "temp1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/MyCSE2441Labs/Lab10/ALU/ALU.v Line: 29
+Warning (10235): Verilog HDL Always Construct warning at ALU.v(29): variable "tempCout" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/MyCSE2441Labs/Lab10/ALU/ALU.v Line: 29
+Warning (10235): Verilog HDL Always Construct warning at ALU.v(29): variable "tempOVR" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/MyCSE2441Labs/Lab10/ALU/ALU.v Line: 29
+Warning (10235): Verilog HDL Always Construct warning at ALU.v(31): variable "temp1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/MyCSE2441Labs/Lab10/ALU/ALU.v Line: 31
+Warning (10235): Verilog HDL Always Construct warning at ALU.v(31): variable "tempCout" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/MyCSE2441Labs/Lab10/ALU/ALU.v Line: 31
+Warning (10235): Verilog HDL Always Construct warning at ALU.v(31): variable "tempOVR" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/MyCSE2441Labs/Lab10/ALU/ALU.v Line: 31
+Warning (10235): Verilog HDL Always Construct warning at ALU.v(33): variable "temp2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/MyCSE2441Labs/Lab10/ALU/ALU.v Line: 33
+Warning (10235): Verilog HDL Always Construct warning at ALU.v(35): variable "temp3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/MyCSE2441Labs/Lab10/ALU/ALU.v Line: 35
+Info (12128): Elaborating entity "TwoComplementAddSub" for hierarchy "ALU:ALU|TwoComplementAddSub:adder" File: D:/MyCSE2441Labs/Lab10/ALU/ALU.v Line: 16
+Info (12128): Elaborating entity "FullAdder" for hierarchy "ALU:ALU|TwoComplementAddSub:adder|FullAdder:test1" File: D:/MyCSE2441Labs/Lab9/TwoComplementAddSub.v Line: 14
+Info (12128): Elaborating entity "TwoComp" for hierarchy "ALU:ALU|TwoComp:display" File: D:/MyCSE2441Labs/Lab10/ALU/ALU.v Line: 23
+Info (12128): Elaborating entity "ProcessorControlUnit" for hierarchy "ProcessorControlUnit:ControlUnit" File: D:/MyCSE2441Labs/TermProject/TermProject.v Line: 60
+Info (12128): Elaborating entity "InstructionDecoder" for hierarchy "ProcessorControlUnit:ControlUnit|InstructionDecoder:ID" File: D:/MyCSE2441Labs/Lab12/ProcessorControlUnit/ProcessorControlUnit.v Line: 9
+Info (12128): Elaborating entity "ControlUnit" for hierarchy "ProcessorControlUnit:ControlUnit|ControlUnit:CU" File: D:/MyCSE2441Labs/Lab12/ProcessorControlUnit/ProcessorControlUnit.v Line: 15
+Info (10264): Verilog HDL Case Statement information at ControlUnit.v(23): all case item expressions in this case statement are onehot File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 23
+Warning (10240): Verilog HDL Always Construct warning at ControlUnit.v(22): inferring latch(es) for variable "nextstate", which holds its previous value in one or more paths through the always construct File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (10041): Inferred latch for "nextstate.ANDSUBXOR2" at ControlUnit.v(22) File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (10041): Inferred latch for "nextstate.SUB0" at ControlUnit.v(22) File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (10041): Inferred latch for "nextstate.XOR0" at ControlUnit.v(22) File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (10041): Inferred latch for "nextstate.HLT0" at ControlUnit.v(22) File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (10041): Inferred latch for "nextstate.ANDSUBXOR1" at ControlUnit.v(22) File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (10041): Inferred latch for "nextstate.ANDSUBXOR0" at ControlUnit.v(22) File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (10041): Inferred latch for "nextstate.ADD3" at ControlUnit.v(22) File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (10041): Inferred latch for "nextstate.ADD2" at ControlUnit.v(22) File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (10041): Inferred latch for "nextstate.ADD1" at ControlUnit.v(22) File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (10041): Inferred latch for "nextstate.ADD0" at ControlUnit.v(22) File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (10041): Inferred latch for "nextstate.STA2" at ControlUnit.v(22) File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (10041): Inferred latch for "nextstate.STA1" at ControlUnit.v(22) File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (10041): Inferred latch for "nextstate.STA0" at ControlUnit.v(22) File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (10041): Inferred latch for "nextstate.LDA3" at ControlUnit.v(22) File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (10041): Inferred latch for "nextstate.LDA2" at ControlUnit.v(22) File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (10041): Inferred latch for "nextstate.LDA1" at ControlUnit.v(22) File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (10041): Inferred latch for "nextstate.LDA0" at ControlUnit.v(22) File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (10041): Inferred latch for "nextstate.JMP0" at ControlUnit.v(22) File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (10041): Inferred latch for "nextstate.CLR0" at ControlUnit.v(22) File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (10041): Inferred latch for "nextstate.INC0" at ControlUnit.v(22) File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (10041): Inferred latch for "nextstate.E" at ControlUnit.v(22) File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (10041): Inferred latch for "nextstate.D" at ControlUnit.v(22) File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (10041): Inferred latch for "nextstate.C" at ControlUnit.v(22) File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (10041): Inferred latch for "nextstate.B" at ControlUnit.v(22) File: D:/MyCSE2441Labs/Lab12/ControlUnit/ControlUnit.v Line: 22
+Info (12128): Elaborating entity "OnOffToggle" for hierarchy "OnOffToggle:DivideX2" File: D:/MyCSE2441Labs/TermProject/TermProject.v Line: 69
+Info (12128): Elaborating entity "BinUp" for hierarchy "BinUp:AddressGen" File: D:/MyCSE2441Labs/TermProject/TermProject.v Line: 77
+Info (12128): Elaborating entity "triscRAM" for hierarchy "triscRAM:RAM" File: D:/MyCSE2441Labs/TermProject/TermProject.v Line: 85
+Info (12128): Elaborating entity "altsyncram" for hierarchy "triscRAM:RAM|altsyncram:altsyncram_component" File: D:/MyCSE2441Labs/triscRAM/triscRAM/triscRAM.v Line: 86
+Info (12130): Elaborated megafunction instantiation "triscRAM:RAM|altsyncram:altsyncram_component" File: D:/MyCSE2441Labs/triscRAM/triscRAM/triscRAM.v Line: 86
+Info (12133): Instantiated megafunction "triscRAM:RAM|altsyncram:altsyncram_component" with the following parameter: File: D:/MyCSE2441Labs/triscRAM/triscRAM/triscRAM.v Line: 86
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "../../My Documents/CSE 2441/Fall 2021/designs/triscRAM/triscRAM.mif"
+    Info (12134): Parameter "intended_device_family" = "MAX 10"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "16"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "widthad_a" = "4"
+    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_6fl1.tdf
+    Info (12023): Found entity 1: altsyncram_6fl1 File: D:/MyCSE2441Labs/TermProject/db/altsyncram_6fl1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_6fl1" for hierarchy "triscRAM:RAM|altsyncram:altsyncram_component|altsyncram_6fl1:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "binary2seven" for hierarchy "binary2seven:displayMDILSB" File: D:/MyCSE2441Labs/TermProject/TermProject.v Line: 87
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer RAMin File: D:/MyCSE2441Labs/TermProject/TermProject.v Line: 18
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "FourBitAccumulator:Accumulator|NbitBinaryCounter:counter|Y[0]" is converted into an equivalent circuit using register "FourBitAccumulator:Accumulator|NbitBinaryCounter:counter|Y[0]~_emulated" and latch "FourBitAccumulator:Accumulator|NbitBinaryCounter:counter|Y[0]~1" File: D:/MyCSE2441Labs/HW8/NbitBinaryCounter/NbitBinaryCounter.v Line: 15
+    Warning (13310): Register "FourBitAccumulator:Accumulator|NbitBinaryCounter:counter|Y[1]" is converted into an equivalent circuit using register "FourBitAccumulator:Accumulator|NbitBinaryCounter:counter|Y[1]~_emulated" and latch "FourBitAccumulator:Accumulator|NbitBinaryCounter:counter|Y[1]~6" File: D:/MyCSE2441Labs/HW8/NbitBinaryCounter/NbitBinaryCounter.v Line: 15
+    Warning (13310): Register "FourBitAccumulator:Accumulator|NbitBinaryCounter:counter|Y[2]" is converted into an equivalent circuit using register "FourBitAccumulator:Accumulator|NbitBinaryCounter:counter|Y[2]~_emulated" and latch "FourBitAccumulator:Accumulator|NbitBinaryCounter:counter|Y[2]~11" File: D:/MyCSE2441Labs/HW8/NbitBinaryCounter/NbitBinaryCounter.v Line: 15
+    Warning (13310): Register "FourBitAccumulator:Accumulator|NbitBinaryCounter:counter|Y[3]" is converted into an equivalent circuit using register "FourBitAccumulator:Accumulator|NbitBinaryCounter:counter|Y[3]~_emulated" and latch "FourBitAccumulator:Accumulator|NbitBinaryCounter:counter|Y[3]~16" File: D:/MyCSE2441Labs/HW8/NbitBinaryCounter/NbitBinaryCounter.v Line: 15
+    Warning (13310): Register "NbitBinaryCounter:ProgramCounter|Y[0]" is converted into an equivalent circuit using register "NbitBinaryCounter:ProgramCounter|Y[0]~_emulated" and latch "NbitBinaryCounter:ProgramCounter|Y[0]~1" File: D:/MyCSE2441Labs/HW8/NbitBinaryCounter/NbitBinaryCounter.v Line: 15
+    Warning (13310): Register "NbitBinaryCounter:ProgramCounter|Y[1]" is converted into an equivalent circuit using register "NbitBinaryCounter:ProgramCounter|Y[1]~_emulated" and latch "NbitBinaryCounter:ProgramCounter|Y[1]~6" File: D:/MyCSE2441Labs/HW8/NbitBinaryCounter/NbitBinaryCounter.v Line: 15
+    Warning (13310): Register "NbitBinaryCounter:ProgramCounter|Y[2]" is converted into an equivalent circuit using register "NbitBinaryCounter:ProgramCounter|Y[2]~_emulated" and latch "NbitBinaryCounter:ProgramCounter|Y[2]~11" File: D:/MyCSE2441Labs/HW8/NbitBinaryCounter/NbitBinaryCounter.v Line: 15
+    Warning (13310): Register "NbitBinaryCounter:ProgramCounter|Y[3]" is converted into an equivalent circuit using register "NbitBinaryCounter:ProgramCounter|Y[3]~_emulated" and latch "NbitBinaryCounter:ProgramCounter|Y[3]~16" File: D:/MyCSE2441Labs/HW8/NbitBinaryCounter/NbitBinaryCounter.v Line: 15
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "displayControlBus[6]" is stuck at GND File: D:/MyCSE2441Labs/TermProject/TermProject.v Line: 8
+    Warning (13410): Pin "displayControlBus[12]" is stuck at GND File: D:/MyCSE2441Labs/TermProject/TermProject.v Line: 8
+    Warning (13410): Pin "displayControlBus[13]" is stuck at GND File: D:/MyCSE2441Labs/TermProject/TermProject.v Line: 8
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 6 registers lost all their fanouts during netlist optimizations.
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "OnOffToggle:DivideX2|Mult0" File: D:/MyCSE2441Labs/LabRam/RAMtesterCode/OnOffToggle/OnOffToggle.v Line: 15
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 291 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 14 input pins
+    Info (21059): Implemented 66 output pins
+    Info (21061): Implemented 203 logic cells
+    Info (21064): Implemented 8 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 31 warnings
+    Info: Peak virtual memory: 4826 megabytes
+    Info: Processing ended: Fri Dec 03 22:14:18 2021
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:21
+
+

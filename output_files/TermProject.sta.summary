@@ -1,0 +1,389 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'SysClock'
+Slack : -11.283
+TNS   : -84.169
+
+Type  : Slow 1200mV 85C Model Setup 'ClockIn'
+Slack : -9.796
+TNS   : -48.668
+
+Type  : Slow 1200mV 85C Model Setup 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.INC0'
+Slack : -9.404
+TNS   : -36.631
+
+Type  : Slow 1200mV 85C Model Setup 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.ANDSUBXOR1'
+Slack : -9.147
+TNS   : -35.859
+
+Type  : Slow 1200mV 85C Model Setup 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.ANDSUBXOR2'
+Slack : -8.393
+TNS   : -31.012
+
+Type  : Slow 1200mV 85C Model Setup 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.E'
+Slack : -7.575
+TNS   : -48.036
+
+Type  : Slow 1200mV 85C Model Setup 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.JMP0'
+Slack : -6.199
+TNS   : -24.034
+
+Type  : Slow 1200mV 85C Model Setup 'OnOffToggle:DivideX2|state'
+Slack : -0.165
+TNS   : -0.318
+
+Type  : Slow 1200mV 85C Model Hold 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.E'
+Slack : -0.174
+TNS   : -0.174
+
+Type  : Slow 1200mV 85C Model Hold 'OnOffToggle:DivideX2|state'
+Slack : 0.348
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ClockIn'
+Slack : 0.641
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.ANDSUBXOR2'
+Slack : 0.994
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'SysClock'
+Slack : 1.361
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.ANDSUBXOR1'
+Slack : 1.505
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.INC0'
+Slack : 1.870
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.JMP0'
+Slack : 3.864
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.INC0'
+Slack : -5.898
+TNS   : -23.190
+
+Type  : Slow 1200mV 85C Model Recovery 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.E'
+Slack : -2.971
+TNS   : -11.773
+
+Type  : Slow 1200mV 85C Model Recovery 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.ANDSUBXOR2'
+Slack : -1.484
+TNS   : -4.004
+
+Type  : Slow 1200mV 85C Model Recovery 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.JMP0'
+Slack : -1.260
+TNS   : -4.578
+
+Type  : Slow 1200mV 85C Model Removal 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.ANDSUBXOR2'
+Slack : 0.013
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.JMP0'
+Slack : 0.150
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.INC0'
+Slack : 1.885
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.E'
+Slack : 2.124
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SysClock'
+Slack : -3.000
+TNS   : -71.983
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ClockIn'
+Slack : -3.000
+TNS   : -38.311
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'OnOffToggle:DivideX2|state'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.ANDSUBXOR1'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.E'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.INC0'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.ANDSUBXOR2'
+Slack : 0.322
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.JMP0'
+Slack : 0.417
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'SysClock'
+Slack : -10.427
+TNS   : -74.692
+
+Type  : Slow 1200mV 0C Model Setup 'ClockIn'
+Slack : -9.099
+TNS   : -44.489
+
+Type  : Slow 1200mV 0C Model Setup 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.INC0'
+Slack : -8.612
+TNS   : -33.462
+
+Type  : Slow 1200mV 0C Model Setup 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.ANDSUBXOR1'
+Slack : -8.370
+TNS   : -32.786
+
+Type  : Slow 1200mV 0C Model Setup 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.ANDSUBXOR2'
+Slack : -7.748
+TNS   : -28.590
+
+Type  : Slow 1200mV 0C Model Setup 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.E'
+Slack : -6.910
+TNS   : -44.975
+
+Type  : Slow 1200mV 0C Model Setup 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.JMP0'
+Slack : -5.655
+TNS   : -21.890
+
+Type  : Slow 1200mV 0C Model Setup 'OnOffToggle:DivideX2|state'
+Slack : -0.064
+TNS   : -0.118
+
+Type  : Slow 1200mV 0C Model Hold 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.E'
+Slack : -0.039
+TNS   : -0.039
+
+Type  : Slow 1200mV 0C Model Hold 'OnOffToggle:DivideX2|state'
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'ClockIn'
+Slack : 0.629
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.ANDSUBXOR2'
+Slack : 0.873
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'SysClock'
+Slack : 1.209
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.ANDSUBXOR1'
+Slack : 1.398
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.INC0'
+Slack : 1.715
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.JMP0'
+Slack : 3.571
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.INC0'
+Slack : -5.462
+TNS   : -21.400
+
+Type  : Slow 1200mV 0C Model Recovery 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.E'
+Slack : -2.653
+TNS   : -10.519
+
+Type  : Slow 1200mV 0C Model Recovery 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.ANDSUBXOR2'
+Slack : -1.437
+TNS   : -3.930
+
+Type  : Slow 1200mV 0C Model Recovery 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.JMP0'
+Slack : -1.168
+TNS   : -4.239
+
+Type  : Slow 1200mV 0C Model Removal 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.ANDSUBXOR2'
+Slack : 0.090
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.JMP0'
+Slack : 0.224
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.INC0'
+Slack : 1.814
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.E'
+Slack : 2.069
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SysClock'
+Slack : -3.000
+TNS   : -70.737
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ClockIn'
+Slack : -3.000
+TNS   : -37.065
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'OnOffToggle:DivideX2|state'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.ANDSUBXOR1'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.E'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.INC0'
+Slack : -1.403
+TNS   : -5.612
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.ANDSUBXOR2'
+Slack : 0.417
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.JMP0'
+Slack : 0.450
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'SysClock'
+Slack : -4.894
+TNS   : -27.747
+
+Type  : Fast 1200mV 0C Model Setup 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.INC0'
+Slack : -4.363
+TNS   : -17.061
+
+Type  : Fast 1200mV 0C Model Setup 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.ANDSUBXOR1'
+Slack : -4.257
+TNS   : -16.726
+
+Type  : Fast 1200mV 0C Model Setup 'ClockIn'
+Slack : -4.100
+TNS   : -15.177
+
+Type  : Fast 1200mV 0C Model Setup 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.ANDSUBXOR2'
+Slack : -3.620
+TNS   : -13.304
+
+Type  : Fast 1200mV 0C Model Setup 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.E'
+Slack : -3.578
+TNS   : -19.808
+
+Type  : Fast 1200mV 0C Model Setup 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.JMP0'
+Slack : -2.534
+TNS   : -9.824
+
+Type  : Fast 1200mV 0C Model Setup 'OnOffToggle:DivideX2|state'
+Slack : 0.501
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'ClockIn'
+Slack : 0.146
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'OnOffToggle:DivideX2|state'
+Slack : 0.152
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.E'
+Slack : 0.281
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.ANDSUBXOR2'
+Slack : 0.423
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.ANDSUBXOR1'
+Slack : 0.539
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.INC0'
+Slack : 0.711
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'SysClock'
+Slack : 0.741
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.JMP0'
+Slack : 1.903
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.INC0'
+Slack : -2.628
+TNS   : -10.330
+
+Type  : Fast 1200mV 0C Model Recovery 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.E'
+Slack : -1.261
+TNS   : -4.990
+
+Type  : Fast 1200mV 0C Model Recovery 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.ANDSUBXOR2'
+Slack : -0.232
+TNS   : -0.436
+
+Type  : Fast 1200mV 0C Model Recovery 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.JMP0'
+Slack : 0.022
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.ANDSUBXOR2'
+Slack : 0.036
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.JMP0'
+Slack : 0.072
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.INC0'
+Slack : 0.579
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.E'
+Slack : 0.714
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SysClock'
+Slack : -3.000
+TNS   : -47.614
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ClockIn'
+Slack : -3.000
+TNS   : -22.802
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'OnOffToggle:DivideX2|state'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.ANDSUBXOR1'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.E'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.INC0'
+Slack : -1.000
+TNS   : -4.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.ANDSUBXOR2'
+Slack : 0.285
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ProcessorControlUnit:ControlUnit|ControlUnit:CU|state.JMP0'
+Slack : 0.342
+TNS   : 0.000
+
+------------------------------------------------------------

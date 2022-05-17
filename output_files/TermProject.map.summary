@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Fri Dec 03 22:14:18 2021
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Revision Name : TermProject
+Top-level Entity Name : TermProject
+Family : MAX 10
+Total logic elements : 179
+    Total combinational functions : 178
+    Dedicated logic registers : 42
+Total registers : 42
+Total pins : 80
+Total virtual pins : 0
+Total memory bits : 128
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0
